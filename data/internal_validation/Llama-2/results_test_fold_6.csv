@@ -1,0 +1,86 @@
+Text description,Output constraint
+"Only after the creation of a claim, the approval of the claim is possible.","Precedence(CreateClaim, ApproveClaim)"
+"A case can be closed manually at any time, unless we still need to pay out the claim.","Precedence(PayClaim, CloseCase)"
+"If an x-ray is taken, then the x-ray risk must be checked before it.","Precedence(CheckXRisk, TakeXray)"
+Every provided laundry service must be billed.,"Response(ProvideLaundryService, BillLaund"
+Sending an invoice is preceded by creating a claim.,"Precedence(CreateClaim, SendInvoice)"
+Sending an invoice is required after the creation of a claim.,"Response(CreateClaim, SendInvoice)"
+All messages incoming from the POP server should be marked as unread.,"Response(ReceiveMessage, MarkUnread)"
+The program should not let the user send a letter without first displaying information about the corresponding request.,"Precedence(DisplayInformation, SendLetter)"
+The design phase must precede the development phase in software projects.,"Precedence(DesignPhase, DevelopmentPhase)"
+"Once an article is written, it should be reviewed by the editor.","Response(WriteArticle, ReviewArticle)"
+Customer entry into the store warrants staff greetings.,"Response(CustomerEntry, StaffGreetings)"
+"Once a customer has made the decision to place an order for a product or service, it sets into motion a series of sequential and interconnected processes within the business operation, one of which involves the initiation and execution of the payment processing procedure to facilitate the completion and fulfillment of the transaction.","Response(MakeDecision, InitiatePaymentProcessing)"
+"Before finalizing and consummating the sale transaction of an automobile or vehicle, it is incumbent upon the seller or dealership to undertake a comprehensive and exhaustive inspection and evaluation of the vehicle's condition and mechanical components to ensure its roadworthiness and compliance with safety standards and regulations.","Precedence(InspectVehicle, FinalizeSaleTransaction"
+"The process of identifying and addressing software bugs and defects forms an integral and indispensable part of the software development life cycle, necessitating thorough and systematic debugging and troubleshooting efforts to rectify any issues or anomalies detected prior to the release and deployment of the software product to end-users.","Response(IdentifyBugs, DebugAndTroubleshoot)"
+"Following a patient's discharge from a medical facility or hospital, it is essential and imperative to update and maintain accurate and up-to-date medical records and documentation reflecting the patient's treatment history, diagnosis, and post-discharge care instructions, facilitating continuity of care and follow-up treatment as needed.","Response(DischargePatient, UpdateMedicalRecords)"
+"Before a software update can be installed, it must be downloaded.","Precedence(DownloadSoftwareUpdate, InstallSoftwareUpdate)"
+"When a security breach is detected, the IT department must implement countermeasures.","Response(DetectSecurityBreach, ImplementCountermeasures)"
+"When a customer submits a query, the support team must respond with a resolution.","Response(SubmitQuery, RespondWithResolution)"
+"Before initiating a software development project, requirements gathering must be conducted.","Precedence(ConductRequirementsGathering, Initi"
+"Upon receipt of a customer inquiry, the sales team should respond.","Response(ReceiveCustomerInquiry, RespondToCustomerInquiry"
+"Prior to launching a marketing campaign, the target audience must be identified.","Precedence(IdentifyTargetAudience, LaunchMarketing"
+"After a project is completed, a post-implementation review should be conducted.","Response(CompleteProject, ConductPostImplementationReview)"
+"Before going to bed, teeth should be brushed for oral hygiene.","Precedence(BrushTeeth, GoToBed)"
+"When a program is installed, the system should be restarted for changes to take effect.","Response(InstallProgram, RestartSystem)"
+"Before serving a meal, food should be cooked to the appropriate temperature.","Precedence(CookFood, ServeMeal)"
+"After a storm, damaged trees should be removed to prevent hazards.","Response(Storm, RemoveDamagedTrees)"
+"When a user posts a question on the forum, they should also mark best answers.","RespondedExistence(PostQuestion, MarkBestAnswers)"
+"When a gardener plants a seed, they should also monitor soil moisture.","RespondedExistence(PlantSeed, MonitorSoil"
+"If a writer drafts a chapter, they must also conduct character development.","RespondedExistence(DraftChapter, ConductCharacterDevelop"
+"When a designer creates a mockup, they should also gather client feedback.","RespondedExistence(CreateMockup, GatherClientFeedback"
+"When a writer outlines a story, they should also develop character arcs.","RespondedExistence(OutlineStory, DevelopCharacterArcs)"
+Registering for a workshop should coincide with selecting session preferences.,"RespondedExistence(RegisterWorkshop, SelectSessionPreferences)"
+Uploading a photo should coincide with adding a caption.,"RespondedExistence(UploadPhoto, AddCaption)"
+Ordering groceries should tie in with selecting delivery time slots.,"RespondedExistence(OrderGroceries, SelectDelivery"
+Purchasing event tickets should go hand in hand with choosing seating arrangements.,"RespondedExistence(PurchaseEventTickets, Choose"
+Registering for a conference should coincide with attending an opening ceremony.,"RespondedExistence(RegisterConference, AttendOpeningC"
+Registering for a workshop should be accompanied by watching an orientation video.,"RespondedExistence(RegisterForWorkshop, WatchOrientationVideo)"
+Subscribing to a coaching service must be complemented by attending an initial consultation session.,"RespondedExistence(SubscribeToCoachingService, Attend"
+Registering for a volunteer project should coincide with attending a volunteer training workshop.,"RespondedExistence(RegisterVolunteerProject, AttendVol"
+"Enrolling in a dance class should synchronize with attending dance rehearsals, and vice versa.","CoExistence(EnrollDanceClass, AttendDanceRe"
+"Joining a book club should align with reading assigned books, and vice versa.","CoExistence(JoinBookClub, ReadAssignedBooks)"
+"Registering for a photography workshop should pair with practicing photography techniques, and vice versa.","CoExistence(RegisterPhotographyWorkshop, PracticePhot"
+"Enrolling in a cooking class should be accompanied by experimenting with new recipes, and experimenting with new recipes should coincide with enrolling in a cooking class.","CoExistence(EnrollCookingClass, ExperimentWithNewRe"
+"Registering for a music class should correlate with learning to play musical instruments, and learning to play musical instruments should correlate with registering for a music class.","CoExistence(RegisterMusicClass, LearnToPlayMusicalInst"
+"To join a astronomy club, one must attend stargazing sessions, and attending stargazing sessions requires joining a astronomy club.","CoExistence(JoinAstronomyClub, AttendStarg"
+"Enrolling in a woodworking class necessitates building wooden furniture, and building wooden furniture requires enrolling in a woodworking class.","CoExistence(EnrollWoodworkingClass, BuildWooden"
+"To sign up for a rock climbing course, one must conquer steep cliffs, and conquering steep cliffs requires signing up for a rock climbing course.","CoExistence(SignUpRockClimbingCourse, Con"
+"Enrolling in a calligraphy workshop requires practicing elegant lettering, and practicing elegant lettering requires enrolling in a calligraphy workshop.","CoExistence(EnrollCalligraphyWorkshop, Practice"
+"Applying for a dance workshop should coincide with attending dance rehearsals, and attending dance rehearsals should coincide with applying for a dance workshop.","CoExistence(ApplyDanceWorkshop, AttendDance"
+"Registering for a yoga retreat should coincide with practicing yoga meditation, and practicing yoga meditation should coincide with registering for a yoga retreat.","CoExistence(RegisterYogaRetreat, PracticeYoga"
+Submission of the application form is required right before scheduling an interview.,"ChainPrecedence(SubmitApplicationForm, ScheduleInterview)"
+"Upon completing the online purchase, the order confirmation email should be received immediately.","ChainResponse(CompleteOnlinePurchase, ReceiveOrderConfirm"
+"Right before the customer proceeds to checkout, the shopping cart must be reviewed for accuracy.","ChainPrecedence(ReviewShoppingCart, Proceed"
+"Before the meeting starts, the agenda should be distributed to all participants right before.","ChainPrecedence(DistributeAgenda, StartMeeting)"
+"Before the race commences, the horses should be in the starting gates right before.",ChainPrecedence(PutHorsesInStartingGates
+Access to the online course materials should be granted immediately upon registration.,"ChainResponse(RegisterOnline, GrantAccessToCourseMaterials"
+Receiving an automated response should happen promptly after filling out the contact form.,"ChainResponse(FillContactForm, ReceiveAutomatedResponse)"
+Granting access to premium features should follow right away after activating the subscription.,"ChainResponse(ActivateSubscription, GrantAccessToPremium"
+The completion of the preliminary investigation is required immediately before initiating the audit.,"ChainPrecedence(CompletePreliminaryInvestigation, In"
+The kick-off of the conference begins with the opening speech.,Init(OpeningSpeech)
+Designing the layout should be the first action.,Init(DesignLayout)
+Saving the changes marks the end of the process.,End(SaveChanges)
+Submitting the form is the last action.,End(SubmitForm)
+"At the beginning of the workout, warming up is essential.",Init(WarmUp)
+"To wrap up the project, finalizing the documentation is necessary.",End(FinalizeDocumentation)
+"In concluding the presentation, summarizing key points is important.",End(SummarizeKeyPoints)
+"If the request is rejected, the process will end.",End(RejectRequest)
+The process starts by reviewing the order.,Init(ReviewOrder)
+Every meeting begins with setting the agenda.,Init(SetAgenda)
+Conducting employee performance reviews should occur at least once per year to provide feedback and set goals.,AtLeastOne(ConductEmployeeReviews)
+Taking the advanced programming course is mandatory for all computer science majors at least once in their studies.,AtLeastOne(TakeAdvancedProgrammingCourse)
+Completing at least one internship is mandatory.,AtLeastOne(CompleteInternship)
+"Enrolling in an independent study course is an option, but it can only occur at most once per semester.",AtMostOne(EnrollIndependentStudy)
+"Utilizing overtime to meet project deadlines is allowed, but it should occur not more than once a week.",AtMostOne(UseOvertime)
+"Flexibility in project deadlines is granted, but it should not occur more than once per project lifecycle.",AtMostOne(GrantFlexibility)
+The warranty registration may occur at most once.,AtMostOne(RegisterWarranty)
+A rollback operation should occur at most once.,AtMostOne(RollbackOperation)
+The scheduling of meetings and the deletion of calendar events should not occur together within scheduling software.,"NotCoExistence(ScheduleMeetings, DeleteCalendarEvents)"
+"The launch of a process should preclude the suspension of the same process, and vice versa.","NotCoExistence(LaunchProcess, SuspendProcess)"
+"If driving a car, using public transportation should not happen, and vice versa.","NotCoExistence(DriveCar, UsePublicTransportation)"
+"If studying for exams, playing video games should not occur, and vice versa.","NotCoExistence(StudyExams, PlayVideoGames"
+"Implementing new security protocols should preclude rolling back previous changes, and vice versa.","NotCoExistence(ImplementNewSecurityProtocols, RollBackPre"
+The deployment of Feature A and Feature B should not occur together within the application.,"NotCoExistence(DeployFeatureA, DeployFeatureB)"
+The execution of Task X and Task Y should not occur together within the project timeline.,"NotCoExistence(ExecuteTaskX, ExecuteTaskY)"
+Browsing the internet and studying for exams should not happen together during study sessions.,"NotCoExistence(BrowseInternet, StudyExams)"

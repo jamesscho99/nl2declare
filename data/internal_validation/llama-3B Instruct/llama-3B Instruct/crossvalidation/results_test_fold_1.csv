@@ -1,0 +1,86 @@
+Text description,Output constraint
+"When a case is submitted, LO should eventually propose dates.","Response(SubmitCase, ProposeDates)"
+"After check-in of the flight, only the cancellation is admitted.",
+"When the client leaves, the bill must be charged.","Response(LeaveClient, ChargeBill)"
+If the author is in the List then the book is found.,"RespondedExistence(ListAuthor, FoundBook)"
+The book is checked out only if it's status is charged or hold.,"Precedence(ChargeBookStatus, CheckOutBook)"
+Acquired locks are eventually released.,Response(ReleaseLocks)
+"The computation will not terminate before the ActivePool task accepts ""Complete"".","Precedence(CompleteActivePool, TerminateComputation)"
+The user can click the button to open a  new graphics window.,"Response(ClickButton, OpenGraphicsWindow)"
+"If a task is completed, it should be marked as done.","Response(CompleteTask, MarkAsDone)"
+"If a package is delivered, then a delivery confirmation should be sent.","Response(DeliverPackage, SendDeliveryConfirmation)"
+"When a new employee is hired, they should undergo orientation.","Response(HireEmployee, UndergoOrientation)"
+The development phase must ensue the design phase in software projects.,"Precedence(DesignPhase, DevelopmentPhase)"
+"Prior to delving into the detailed analysis of results obtained from the conducted experiment, it is absolutely imperative that the experiment itself is carried out meticulously and accurately.","Precedence(CarryOutExperiment, AnalyzeResults)"
+"Upon the successful reception and delivery of a package at the warehouse, it is standard protocol and practice to meticulously log and document the received package into the inventory management system, ensuring proper tracking and management of inventory levels and stock availability.","Response(ReceivePackage, LogPackage)"
+Developing a mobile application comes before its testing phase.,"Precedence(DevelopMobileApp, TestMobileApp)"
+"Before painting a room, the walls must be prepared.","Precedence(PrepareWalls, PaintRoom)"
+"If a decision is made, it should be documented for reference.","Response(MakeDecision, DocumentDecision)"
+"Before sending an email, the message should be drafted.","Precedence(DraftMessage, SendEmail)"
+"When a code review is conducted, feedback should be provided to developers.","Response(ConductCodeReview, ProvideFeedback)"
+"When a strategy is devised, it should be communicated to team members.","Response(DeviseStrategy, CommunicateStrategy)"
+"When a payment is received, it should be recorded for accounting purposes.","Response(ReceivePayment, RecordPayment)"
+"After a software update is installed, it should be tested for functionality.","Response(InstallUpdate, TestFunctionality)"
+"Before deploying a software update, a backup should be created.","Precedence(CreateBackup, DeployUpdate)"
+"When a website is launched, it should be tested for compatibility across browsers.","Response(LaunchWebsite, TestCompatibility)"
+"Before a meeting, the agenda should be circulated among attendees.","Precedence(CirculateAgenda, AttendMeeting)"
+"After a workout session, it is important to stretch to prevent muscle soreness.","Response(WorkoutSession, Stretch)"
+"When a car's check engine light comes on, it should be diagnosed for potential issues.","Response(EngineLightOn, DiagnoseIssues)"
+"If a client schedules a meeting, the organizer must also send out invites.","RespondedExistence(ScheduleMeeting, SendInvites)"
+"When registering for an event, attendees should also reserve accommodation.","RespondedExistence(RegisterEvent, ReserveAccommodation)"
+"When a student submits a paper, they should also check for plagiarism.","RespondedExistence(SubmitPaper, CheckForPlagiarism)"
+"When a customer downloads an app, they should also explore app features.","RespondedExistence(DownloadApp, ExploreAppFeatures)"
+"If a painter starts a canvas, they must also select color palettes.","RespondedExistence(StartCanvas, SelectColorPalettes)"
+Joining a club should correspond to filling out membership forms.,"RespondedExistence(JoinClub, FillMembershipForms)"
+Signing up for a class should go hand in hand with indicating preferred time slots.,"RespondedExistence(SignUpClass, IndicatePreferredTimeSlots)"
+Signing up for an internship should coincide with attending an orientation day.,"RespondedExistence(SignUpInternship, AttendOrientationDay)"
+Subscribing to a meditation course should be paired with participating in a mindfulness session.,"RespondedExistence(SubscribeMeditationCourse, ParticipateMindfulnessSession)"
+"Applying for a volunteer position should pair with attending a volunteer orientation session, and vice versa.","CoExistence(ApplyVolunteerPosition, AttendVolunteerOrientationSession)"
+"Signing up for a wine-tasting event should align with learning about wine varieties, and vice versa.","CoExistence(SignUpWineTasting, LearnWineVarieties)"
+"Joining a fitness group should correlate with participating in group workouts, and vice versa.","CoExistence(JoinFitnessGroup, ParticipateGroupWorkouts)"
+"Applying for a pottery workshop should include crafting intricate ceramics, and crafting intricate ceramics should include applying for a pottery workshop.","CoExistence(ApplyPotteryWorkshop, CraftIntricateCeramics)"
+"Registering for a photography class should entail capturing breathtaking landscapes, and capturing breathtaking landscapes should entail registering for a photography class.","CoExistence(RegisterPhotographyClass, CaptureBreathtakingLandscapes)"
+"Enrolling in a woodworking class should coincide with purchasing woodworking tools, and purchasing woodworking tools should coincide with enrolling in a woodworking class.","CoExistence(EnrollWoodworkingClass, PurchaseWoodworkingTools)"
+"To sign up for a wine tasting class, one must sample a variety of wines, and sampling a variety of wines requires signing up for a wine tasting class.","CoExistence(SignUpWineTastingClass, SampleVarietyWines)"
+"After the customer submits the order form, the payment confirmation email must be sent immediately.","ChainResponse(SubmitOrderForm, SendPaymentConfirmationEmail)"
+The document drafting phase should directly precede the document revision phase.,"Precedence(DraftDocument, ReviseDocument)"
+"Upon entering the payment information, the payment processing should begin immediately.","ChainResponse(EnterPaymentInfo, BeginPaymentProcessing)"
+"Right before starting the webinar, the presentation slides need to be uploaded to the platform.","Precedence(UploadSlides, StartWebinar)"
+"Directly prior to assigning tasks, the project objectives should be defined clearly.","Precedence(DefineProjectObjectives, AssignTasks)"
+"After the construction crew finishes the foundation work, the building framework should be erected immediately.","ChainResponse(FinishFoundationWork, ErectBuildingFramework)"
+"After the customer selects a movie, the ticket purchase process should initiate immediately after.","ChainResponse(SelectMovie, InitiateTicketPurchase)"
+"After the car reaches the destination, the passengers should disembark without delay.","Response(ReachDestination, DisembarkPassengers)"
+"When the subscription is activated, granting access to premium features should follow right away.","ChainResponse(ActivateSubscription, GrantAccessToPremiumFeatures)"
+Sending the confirmation email should immediately follow the completion of the purchase transaction.,"ChainResponse(CompletePurchaseTransaction, SendConfirmationEmail)"
+The start of the journey requires packing essential items.,Init(PackEssentialItems)
+The inception of the event planning involves setting the date.,Init(SetDate)
+"When commencing the meeting, assigning roles is crucial.",Init(AssignRoles)
+After which the financial department will take care of the invoice and the processes is ended.,End(ProcessInvoice)
+The process starts when any employee of the organization submits a vacation request.,Init(SubmitVacationRequest)
+"As soon as an employee files an expense report, the process is started.",Init(FileExpenseReport)
+"Upon receiving a support ticket, the troubleshooting process begins.","Response(ReceiveSupportTicket, BeginTroubleshootingProcess)"
+"To complete the project, submitting the final deliverables is necessary.",End(SubmitFinalDeliverables)
+"To end the presentation, thanking the audience is customary.",End(ThankAudience)
+The emergency shutdown procedure should occur at most once during system failures.,AtMostOne(InitiateEmergencyShutdown)
+Checking fire extinguishers for proper functionality should happen at least once every six months.,AtLeastOne(PerformFireExtinguisherCheck)
+All employees must participate in fire safety training at least once per year to maintain workplace safety.,AtLeastOne(TrainFireSafety)
+Completing the advanced elective course is optional and can be done at most once during the academic year.,AtMostOne(CompleteAdvancedElective)
+Accessing the restricted server privileges is restricted and should occur at most once during the workweek.,AtMostOne(GrantServerAccess)
+Every student must participate in at least one field trip to enrich their educational experience beyond the classroom.,AtLeastOne(EnrollInFieldTrip)
+"You are permitted to use the company car for personal errands, but it should not happen more than once a month.",AtMostOne(UseCompanyCar)
+"Granting exceptions to workplace policies is acceptable, but it should occur not more than once per employee.",AtMostOne(GrantException)
+Reviews must take place at least once.,AtLeastOne(ReviewReviews)
+Presentations need to be delivered at least once.,AtLeastOne(DeliverPresentation)
+A return authorization may be issued at most once.,AtMostOne(IssueReturnAuthorization)
+Invoices should be processed at least once.,AtLeastOne(ProcessInvoice)
+"If the marketing campaign launch occurs, the postponement of product launch may not happen, and vice-versa.","NotCoExistence(LaunchMarketingCampaign, PostponeProductLaunch)"
+Customer registration and customer account deletion should never occur together in online services.,"NotCoExistence(RegisterCustomer, DeleteCustomerAccount)"
+Service outage and system maintenance tasks should never coincide within IT operations.,"NotCoExistence(ServiceOutage, SystemMaintenance)"
+Data encryption and data decryption should never happen together within information security protocols.,"NotCoExistence(EncryptData, DecryptData)"
+"The initiation of backups should preclude the initiation of system restores, and vice versa.","NotCoExistence(InitiateBackups, InitiateSystemRestores)"
+Ordering a dessert and skipping the main course should preclude each other during a meal.,"NotCoExistence(OrderDessert, SkipMainCourse)"
+Writing code and hiking in the mountains should not both occur.,"NotCoExistence(WriteCode, HikeInMountains)"
+The scheduling of Module A lab session and Module B lab session should not coexist within the curriculum.,"NotCoExistence(ScheduleModuleALabSession, ScheduleModuleBLabSession)"
+The opening of a savings account and a checking account must not coincide within the banking system.,"NotCoExistence(OpenSavingsAccount, OpenCheckingAccount)"
+Choosing the psychology major and selecting the sociology minor should not both take place within the academic curriculum.,"NotCoExistence(ChoosePsychologyMajor, SelectSociologyMinor)"
+Reading a book and scrolling through social media should not both occur within leisure time.,"NotCoExistence(ReadBook, ScrollSocialMedia)"

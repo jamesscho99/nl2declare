@@ -1,0 +1,29 @@
+# Specific requirements for instruction-tuned models in internal validation
+# Use ONLY for Llama-3.2-1B-Instruct and Llama-3.2-3B-Instruct models
+# These versions are required for the chat template formatting function
+
+bitsandbytes==0.42.0
+peft==0.11.1
+trl==0.9.4
+accelerate==0.33.0
+datasets==2.20.0
+transformers==4.43.1
+
+# Core dependencies (compatible versions)
+torch>=2.0.0
+pandas>=2.2.0
+numpy>=1.26.0
+tqdm>=4.60.0
+requests>=2.25.0
+PyYAML>=6.0.0
+regex>=2023.0.0
+tokenizers>=0.15.0
+sentencepiece>=0.2.0
+huggingface-hub>=0.34.0
+safetensors>=0.6.0
+pyarrow>=21.0.0
+fsspec>=2023.10.0
+
+# Analysis and visualization
+matplotlib>=3.9.0
+seaborn>=0.13.0

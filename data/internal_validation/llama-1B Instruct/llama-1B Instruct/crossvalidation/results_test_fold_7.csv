@@ -1,0 +1,86 @@
+Text description,Output constraint
+"A claim can be approved, after it has been created.","Response(CreateClaim, ApproveClaim)"
+The approval of the claim should be preceded by the creation of the claim.,"Precedence(CreateClaim, ApproveClaim)"
+A claim should be approved before it can be paid out.,"Precedence(ApproveClaim, PayOutClaim)"
+"If a surgery is performed, then prescription of rehabilitation occurs eventually after it.","ChainResponse(PerformSurgery, PrescriptionRehabilitation)"
+"If a request is sent, then a proposal is expected to be prepared afterwards.","Response(SendRequest, PrepareProposal)"
+Every provided room service must be billed.,"Response(ProvideRoomService, BillBilled)"
+Sending an invoice is required to create a claim.,"Precedence(CreateClaim, SendInvoice)"
+The creation of a claim is required after sending an invoice.,"Response(SendInvoice, CreateClaim)"
+Creating a claim must precede sending an invoice.,"Precedence(CreateClaim, SendInvoice)"
+A car must be inspected before it can be sold.,"Precedence(InspectCar, SellCar)"
+"If a flight is booked, the ticket should be issued.","Response(BookFlight, IssueTicket)"
+An event must be planned before it can be executed.,"Precedence(PlanEvent, ExecuteEvent)"
+"Upon receiving a package, it must be logged into inventory.","Response(ReceivePackage, LogIntoInventory)"
+"Following article writing, it should be subject to editorial review.","Response(WriteArticle, SubjectEditorialReview)"
+"The successful execution and hosting of an event or gathering necessitate meticulous and strategic event planning and coordination efforts upfront, encompassing logistical arrangements, resource allocation, scheduling, and attendee management, ensuring a seamless and memorable experience for all participants and attendees involved.","CoExistence(MakeEventPlanning, HostEvent)"
+"Before a recipe is prepared, the ingredients must be gathered.","Precedence(GatherIngredients, PrepareRecipe)"
+A presentation can only be delivered after the slides are prepared.,"Precedence(PrepareSlides, DeliverPresentation)"
+"If a customer submits a support ticket, they should receive a response within 24 hours.","Response(SubmitSupportTicket, ReceiveResponse)"
+Designing a website comes before coding its functionality.,"Precedence(DesignWebsite, CodeFunctionality)"
+"If a student submits an assignment, the instructor should provide feedback.","Response(SubmitAssignment, ProvideFeedback)"
+Completion of the architectural blueprint is a prerequisite for starting construction.,"Precedence(CompleteArchitecturalBlueprint, StartConstruction)"
+Completion of the outline is required before writing an essay.,"Precedence(CompleteOutline, WriteEssay)"
+Completing the storyboard is a prerequisite for animating a video.,"Precedence(CompleteStoryboard, AnimatingVideo)"
+"When a task is assigned, it should be completed within the deadline.","Response(AssignTask, CompleteTask)"
+"Before a presentation is given, slides must be prepared.","Precedence(PrepareSlides, GivePresentation)"
+"After an experiment is conducted, results should be analyzed for conclusions.","Response(ConductExperiment, AnalyzeResults)"
+"Before launching a new product, market research must be conducted.","Precedence(MarkResearch, LaunchProduct)"
+"When a program crashes, an error report should be generated for troubleshooting.","Response(CrashProgram, GenerateErrorReport)"
+"After completing a workout, cooldown exercises should be performed to prevent injury.","Response(CompleteWorkout, PerformCooldownExercises)"
+"When a phone call is received, it should be answered.","Response(ReceiveCall, AnswerCall)"
+"If a student attends a lecture, they should also participate in online discussions.","RespondedExistence(AttendLecture, ParticipateInOnlineDiscussions)"
+"If a customer purchases a product, they should also provide product reviews.","Response(PurchaseProduct, ProvideProductReviews)"
+"When a user subscribes to a service, they should also set up payment preferences.","RespondedExistence(SubscribeToService, SetUpPaymentPreferences)"
+"If a chef prepares a recipe, they should also taste-test the dish.","RespondedExistence(PrepareRecipe, TasteTestRecipe)"
+Renting a car should be linked to providing a valid driver's license.,"RespondedExistence(RentCar, ProvideValidDriverLicense)"
+"Enrolling in a self-defense course should synchronize with purchasing safety equipment, and vice versa.","CoExistence(PurchaseSafetyEquipment, EnrollSelfDefenseCourse)"
+"Enrolling in a yoga class should align with practicing yoga poses, and vice versa.","CoExistence(EnrollYogaClass, PracticeYogaPoses)"
+"Registering for a writing retreat should be linked to practicing creative writing, and practicing creative writing should be linked to registering for a writing retreat.","CoExistence(RegisterWritingRetreat, PracticeCreativeWriting)"
+"To join a sushi-making group, one must master sushi knife techniques, and mastering sushi knife techniques requires joining a sushi-making group.","CoExistence(MasterSushiKnifeTechniques, JoinSushiMakingGroup)"
+"Signing up for a wine tasting class entails sampling fine wines, and sampling fine wines entails signing up for a wine tasting class.","CoExistence(SignUpWineTastingClass, SampleFineWines)"
+"To join a gardening club, one must attend gardening workshops, and attending gardening workshops requires joining a gardening club.","CoExistence(AttendGardeningWorkshops, JoinGardeningClub)"
+"After the initial consultation with the client, the project proposal needs to be drafted promptly.","ChainPrecedence(DraftProjectProposal, InitialConsultation)"
+"Before starting the webinar, the presentation slides need to be uploaded to the platform right before.","ChainPrecedence(UploadSlides, StartWebinar)"
+"Upon saving the document, the changes should be applied automatically without delay.","ChainResponse(SaveDocument, ApplyChangesAutomatically)"
+"Prior to finalizing the project budget, the cost estimation should be conducted thoroughly right before.","ChainPrecedence(ConductCostEstimation, FinalizeProjectBudget)"
+"After the cashier scans the items, the customer should proceed to payment immediately after.","ChainResponse(ScanItems, ProceedToPayment)"
+"When the alarm sounds, the emergency response team should mobilize immediately after.","ChainResponse(SoundAlarm, MobilizeEmergencyResponse)"
+"Before the flight takes off, the passengers should fasten their seatbelts right before.","Precedence(FastenSeatbelts, TakeOff)"
+"Prior to the event kickoff, the banners and decorations must be hung up right before.","ChainPrecedence(HungUpBanners, KickoffEvent)"
+Completion of the purchase transaction should be followed immediately by sending a confirmation email.,"ChainResponse(CompletePurchaseTransaction, SendConfirmationEmail)"
+"Once the order is confirmed, processing the payment should be immediate.","ChainResponse(ConfirmOrder, ProcessPayment)"
+The conclusion of the day entails reflection on accomplishments.,End(ReflectAccomplishments)
+Logging in is the first action required.,Init(LogIn)
+Locking the door should be the final action.,End(LockingDoor)
+"At the outset, setting up the equipment is mandatory.",Init(SetUpEquipment)
+"As a starting point, turning on the lights is necessary.",Init(TurnOnLights)
+"As the final task in the project, presenting findings is essential.",End(PresentFindings)
+"To complete the transaction, confirming payment is necessary.","Response(ConfirmPayment, CompleteTransaction)"
+Every project begins with outlining the objectives.,Init(OutlineObjectives)
+"To initiate the review process, uploading the document is necessary.","Precedence(UploadDocument, InitiateReviewProcess)"
+The process kicks off with a detailed project kickoff meeting.,Init(DetailProjectKickoffMeeting)
+The process is terminated after all outstanding issues are resolved.,End(TerminateProcess)
+A system reboot should be performed sparingly and may occur at most once to resolve technical issues.,AtMostOne(SpareReboot)
+Rolling back database changes should be avoided except in emergencies and may occur at most once.,AtMostOne(AvoidRollingBackDatabaseChanges)
+Reviewing and updating company policies must occur at least once a year to ensure compliance with regulations.,AtLeastOne(ReviewCompanyPolicies)
+Attending at least one networking event is essential.,AtLeastOne(AttendNetworkingEvent)
+"Taking extended breaks during work hours is tolerated, but it should not happen more than once a day.",AtMostOne(TakeExtendedBreak)
+"Throughout her studies, Sarah must have attended at least one guest lecture per semester to gain diverse insights.",AtLeastOne(AttendGuestLecture)
+"Throughout his career, John has to mentor at least one junior colleague to pass on his knowledge and experience.",AtLeastOne(MentorJuniorColleague)
+Inspections must be conducted at least once.,AtLeastOne(ConductInspections)
+Assignments must be completed at least once.,AtLeastOne(CompleteAssignments)
+Appointments must be confirmed at least once.,AtLeastOne(ConfirmAppointment)
+A cancellation request cannot be made more than once.,AtMostOne(MakeCancellationRequest)
+"The deployment of new software updates should preclude the rollback to previous versions, and vice-versa.","NotCoExistence(DeployNewUpdates, RollbackPreviousVersions)"
+The start of a print job and the cancellation of a print job are mutually exclusive tasks.,"NotCoExistence(StartPrintJob, CancelPrintJob)"
+Gardening in the backyard and playing video games should never occur together.,"NotCoExistence(GardeningBackyard, PlayVideoGames)"
+Running on the treadmill and taking a leisurely stroll should never occur together.,"NotCoExistence(RunTreadmill, TakeLeisurelyStroll)"
+Biking in the park and skateboarding on the sidewalk should never occur together.,"NotCoExistence(BikingPark, SkateboardingSidewalk)"
+"Launching a product should preclude postponing its release, and vice versa.","Precedence(LaunchProduct, PostponeRelease)"
+Completing online training should not occur together with attending in-person workshops.,"NotCoExistence(CompleteOnlineTraining, AttendInPersonWorkshops)"
+Attending a lecture on biology should not occur together with participating in a seminar on chemistry.,"NotCoExistence(AttendLecture, ParticipateSeminar)"
+Completing a physics lab should not occur together with attending a chemistry lecture.,"NotCoExistence(CompletePhysicsLab, AttendChemistryLecture)"
+"Signing up for Module A should preclude signing up for Module B, and vice versa.","NotCoExistence(SignUpModuleA, SignUpModuleB)"
+"Completing the coursework for Module A should preclude dropping Module B, and vice versa.","NotCoExistence(CompleteModuleA, DropModuleB)"
+The selection of Module A topic and Module B topic should not coexist within the research project.,"NotCoExistence(SelectModuleATopic, SelectModuleBTopic)"

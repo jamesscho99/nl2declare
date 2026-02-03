@@ -1,0 +1,86 @@
+Text description,Output constraint
+The harvesting process should precede the packaging process for agricultural products.,"Precedence(HarvestProducts, PackageProducts)"
+"Once an order is placed by a customer, payment processing is necessary.","Response(PlaceOrder, ProcessPayment)"
+A car sale is only permissible after inspection.,"Precedence(InspectCar, SellCar)"
+"Before an appointment, scheduling is mandatory.","Precedence(ScheduleAppointment, ConductAppointment)"
+"Upon the entry and arrival of customers into the physical retail establishment or store premises, it is customary and expected that they receive a warm and welcoming greeting from the staff and employees present, fostering a positive and hospitable atmosphere conducive to a pleasant shopping experience.","Response(CustomerEntry, WelcomeGreeting)"
+"Following the completion and composition of written content or articles, it is customary and standard practice for such materials to undergo a thorough and comprehensive editorial review and scrutiny by qualified editors and proofreaders to ensure accuracy, coherence, and adherence to established editorial standards and guidelines.","Response(WriteContent, ReviewContent)"
+"Upon the successful completion and finalization of a purchase transaction, it triggers and initiates the subsequent generation and issuance of an invoice document detailing the specifics and particulars of the transaction, including itemized charges, payment terms, and billing information, facilitating proper documentation and accounting of financial transactions.","Response(MakePurchase, GenerateInvoice)"
+"Upon the submission and receipt of a request or inquiry, it undergoes a thorough and systematic review and evaluation process by the appropriate department or personnel tasked with assessing and addressing the request, ensuring timely and effective resolution and response to the requester's needs and queries.","Response(SubmitRequest, ReviewRequest)"
+A hike cannot begin until all necessary gear is packed.,"Precedence(PackGear, StartHike)"
+"If a patient requests an appointment, they should receive confirmation of their appointment.","Response(RequestAppointment, ReceiveConfirmation)"
+"If a recipe is followed, ingredients should be measured beforehand.","Precedence(MeasureIngredients, FollowRecipe)"
+"Once a plan is made, it should be executed.","Response(MakePlan, ExecutePlan)"
+"Before taking a test, students should study thoroughly.","Precedence(StudyThoroughly, TakeTest)"
+"If an error is detected, it should be logged for troubleshooting.","Response(DetectError, LogError)"
+"Once a decision is made, it should be communicated to all relevant parties.","Response(MakeDecision, CommunicateDecision)"
+"When an issue is reported, it should be investigated.","Response(ReportIssue, InvestigateIssue)"
+"When a purchase is made, an invoice should be generated for payment.","Response(MakePurchase, GenerateInvoice)"
+"Before starting a hike, the backpack should be packed with essentials.","Precedence(PackBackpack, StartHike)"
+"Once a musical instrument is purchased, it should be tuned before playing.","Precedence(TuneInstrument, PlayMusic)"
+"When a vehicle's oil light turns on, it should be checked for oil levels.","Response(OilLightTurnsOn, CheckOilLevels"
+"When a user creates an account, the system must also send a confirmation email.","Response(CreateAccount, SendConfirmationEmail)"
+"If a subscriber opts in for notifications, they must also specify preferences.","RespondedExistence(OptInForNotifications, SpecifyPreferences"
+"If a user signs up for a membership, they should also create a profile.","RespondedExistence(SignUpForMembership, CreateProfile)"
+"If a user creates an account, they must also set up security questions.","RespondedExistence(CreateAccount, SetUpSecurityQuestions)"
+Participating in a webinar should be coupled with submitting questions.,"RespondedExistence(AttendWebinar, SubmitQuestions"
+Applying for a job should correspond with submitting a resume.,"RespondedExistence(ApplyJob, SubmitResume)"
+Enrolling in a language course should involve participating in a placement test.,"RespondedExistence(EnrollLanguageCourse, ParticipatePl"
+Subscribing to a mentorship program should be complemented by attending a kick-off meeting.,"RespondedExistence(SubscribeToMentorshipProgram, Att"
+Registering for a cooking class has to coincide with attending an ingredient sourcing workshop.,"RespondedExistence(RegisterCookingClass, AttendIn"
+"Applying for a cooking competition should synchronize with perfecting cooking skills, and vice versa.","CoExistence(ApplyCookingCompetition, PerfectCook"
+"Registering for a music class should pair with practicing musical instruments, and vice versa.","CoExistence(RegisterMusicClass, PracticeMusicalInstruments)"
+"Enrolling in a cooking class should synchronize with experimenting with new recipes, and vice versa.","CoExistence(EnrollCookingClass, ExperimentWithNew"
+"Registering for a language course should align with practicing language speaking, and vice versa.","CoExistence(RegisterLanguageCourse, PracticeLanguageSpeaking)"
+"Applying for a dance workshop should coincide with attending dance rehearsals, and attending dance rehearsals should coincide with applying for a dance workshop.","CoExistence(ApplyDanceWorkshop, AttendDanceRe"
+"Joining a fitness group should correspond to participating in group workouts, and participating in group workouts should correspond to joining a fitness group.","CoExistence(JoinFitnessGroup, ParticipateGroupWorkouts)"
+"Registering for a hiking trip should involve exploring nature trails, and exploring nature trails should coincide with registering for a hiking trip.","CoExistence(RegisterHikingTrip, ExploreNatureTra"
+"Joining a photography club involves capturing stunning landscapes, and capturing stunning landscapes involves joining a photography club.","CoExistence(JoinPhotographyClub, CaptureStunning"
+"Registering for a cooking class requires baking delicious desserts, and baking delicious desserts requires registering for a cooking class.","CoExistence(RegisterCookingClass, BakeDeliciousD"
+"Applying for a photography course should synchronize with practicing composition techniques, and practicing composition techniques should synchronize with applying for a photography course.","CoExistence(ApplyPhotographyCourse, PracticeCompositionTe"
+"Registering for a language exchange program should align with practicing language exchange, and practicing language exchange should align with registering for a language exchange program.","CoExistence(RegisterLanguageExchange, PracticeLanguageExchange)"
+"If a claim is approved, then it must have been created immediately before.","ChainPrecedence(CreateClaim, ApproveClaim)"
+"After scheduling the appointment, the confirmation email should be sent to the client immediately.","ChainResponse(ScheduleAppointment, SendConfirmationEmail)"
+"Upon receiving the patient's medical history, the doctor should conduct a physical examination promptly.","ChainResponse(ReceiveMedicalHistory, ConductPhysicalExamination"
+"Prior to the race start, the athletes must line up at the starting line immediately before.","ChainPrecedence(LineUpAtStartingLine, StartRace"
+"When the clock strikes midnight, the fireworks display should begin right away.","ChainResponse(StrikeClockMidnight, BeginFireworksDisplay)"
+"After the application submission, the review process should commence promptly.","ChainResponse(SubmitApplication, StartReviewProcess)"
+The initiation of the project should begin with brainstorming sessions.,Init(BrainstormingSessions)
+Writing the conclusion should be the first task.,Init(WriteConclusion)
+Payout should end the process.,End(Payout)
+Every process instance starts by examining a patient.,Init(ExaminePatient)
+The process begins with the booking of the ticket.,Init(BookTicket)
+The process starts when an invoice is received by the administration department.,Init(ReceiveInvoice)
+"Afterwards, the sales department ships the bicycle to the customer and finishes the process instance.",End(ShipBicycle)
+The process starts with gathering feedback from stakeholders.,Init(GatherFeedback)
+The production process kicks off with sourcing raw materials.,Init(SourceRawMaterials)
+The process ends with delivering the product to the customer.,End(DeliverProductToCustomer)
+The process wraps up with archiving the documentation.,End(ArchiveDocumentation)
+The process initiation occurs when the client signs the service agreement.,"Response(SignServiceAgreement, InitiateProcess)"
+The process concludes when the final report is submitted.,End(SubmitFinalReport)
+The day concludes with a family dinner around the table.,End(FamilyDinner)
+Running a full antivirus scan on the server should only happen in critical situations and may occur at most once.,AtMostOne(RunAntivirusScan)
+Disabling automatic updates should be avoided except in critical cases and may occur at most once.,AtMostOne(DisableAutomaticUpdates)
+An inspection of the safety equipment must occur at least once every month to ensure workplace compliance.,AtLeastOne(InspectSafetyEquipment)
+The weekly progress report meeting should be attended by all team members at least once a week.,AtLeastOne(AttendProgressReportMeeting)
+Completing the customer satisfaction survey is required for all clients at least once.,AtLeastOne(CompleteCustomerSatisfactionSurvey)
+Attending the industry conference is highly recommended for professional development at least once every quarter.,AtLeastOne(AttendIndustryConference)
+"Applying for an extension on project deadlines is permitted, but it can only occur at most once per semester.",AtMostOne(ApplyExtension)
+Submitting at least one research paper to a peer-reviewed journal is necessary for advancing academic careers.,AtLeastOne(SubmitResearchPaper)
+"Cancelling appointments with clients is allowed, but it should happen not more than once a quarter.",AtMostOne(CancelAppointment)
+"During her time abroad, Maria has to immerse herself in at least one local tradition to better understand the culture.",AtLeastOne(ImmerseInLocalTradition)
+A system restart may take place not more than once.,AtMostOne(RestartSystem)
+Software deployment and software rollback should never coincide.,"NotCoExistence(DeploySoftware, RollbackSoftware)"
+Patient intake and patient discharge should never coincide.,"NotCoExistence(PatientIntake, PatientDischarge"
+Course registration and course withdrawal should never happen together in academic institutions.,"NotCoExistence(CourseRegistration, CourseWithdrawal)"
+Flight boarding and flight cancellation should be mutually exclusive within airline operations.,"NotCoExistence(BoardFlight, CancelFlight)"
+"If data encryption is initiated, decryption should be prohibited, and vice versa.","NotCoExistence(InitiateDataEncryption, ProhibitData"
+User enrollment and user deregistration should never occur together in the system.,"NotCoExistence(UserEnrollment, UserDeregistration)"
+Initiating a payment and requesting a refund should be mutually exclusive actions within a transaction.,"NotCoExistence(InitiatePayment, RequestRefund)"
+"If studying in the library, socializing loudly should not occur, and vice versa.","NotCoExistence(StudyLibrary, SocializeLoudly)"
+"If listening to music, engaging in deep conversation should not occur, and vice versa.","NotCoExistence(ListenMusic, EngageInDeepConversation)"
+Reading a book and scrolling through social media should not both occur.,"NotCoExistence(ReadBook, ScrollSocialMedia)"
+Practicing yoga and weightlifting should not both take place.,"NotCoExistence(PracticeYoga, LiftWeights"
+Going for a hike and binge-watching TV shows should not happen both.,"NotCoExistence(GoHike, BingeWatchTVShows"
+Passing the exam for Module A should not occur together with failing the exam for Module B.,"NotCoExistence(PassModuleAExam, FailModuleBEx"
+The execution of SQL queries and NoSQL queries should not co-occur in the same database operation.,"NotCoExistence(ExecuteSQLQuery, ExecuteNoSQLQuery)"

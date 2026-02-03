@@ -1,0 +1,86 @@
+Text description,Output constraint
+"A claim should be created, before it can be approved.","Precedence(CreateClaim, ApproveClaim)"
+"If a claim is created, it can be approved.","Precedence(CreateClaim, ApproveClaim)"
+"Approving the claim can happen at anytime, unless it still needs to be created.","Precedence(CreateClaim, ApproveClaim)"
+The creation of the claim is a condition for the approval of the claim.,"Precedence(CreateClaim, ApproveClaim)"
+The approval of the claim requires that the creation of the claim occurs before it.,"Precedence(CreateClaim, ApproveClaim)"
+After a meeting is arranged it must be held.,"Response(ArrangeMeeting, HoldMeeting)"
+An invoice must be sent before the creation of a claim.,"Precedence(SendInvoice, CreateClaim)"
+"Before an invoice is sent, the creation of a claim is required.","Precedence(CreateClaim, SendInvoice)"
+A worker signals done only if its local computation does so.,"Response(SignalDone, LocalCompute)"
+"If users entry illegal strings into any text fields, then information window will pop-up.","Response(EnterIllegalString, PopupInformationWindow)"
+The project initiation phase should precede the project planning phase.,"Precedence(InitiateProject, PlanProject)"
+"Once the review process is completed, feedback should be provided.","Response(CompleteReviewProcess, ProvideFeedback)"
+"When a website is launched, it should be monitored for performance.","Response(LaunchWebsite, MonitorPerformance)"
+"Prior to analyzing results, an experiment must be conducted.","Precedence(ConductExperiment, AnalyzeResults)"
+Identification and rectification of bugs must occur before software release.,"Precedence(IdentifyBugs, ReleaseSoftware)"
+"In building projects, the construction phase follows the planning phase.","Response(PlanProject, ConstructProject)"
+Execution of a workout routine is contingent upon proper warm-up.,"Precedence(WarmUp, ExecuteRoutine)"
+"Upon receipt of a legal request, the compliance team must provide the necessary documentation.","Response(ReceiveLegalRequest, ProvideDocumentation)"
+Running a marathon requires proper training beforehand.,"Precedence(RunMarathon, TrainProperly)"
+"Prior to hosting a webinar, the presentation slides must be finalized.","Precedence(FinalizeSlides, HostWebinar)"
+"If a security vulnerability is identified, the IT team should patch the system.","Response(IdentifySecurityVulnerability, PatchSystem)"
+"If a package is lost during transit, the shipping department should initiate an investigation.","Response(ReceivePackage, InitiateInvestigation)"
+"When a problem arises, it should be addressed.","Response(NoticeProblem, AddressProblem)"
+"Before starting a workout, warm-up exercises must be performed.","Precedence(PerformWarmUp, StartWorkout)"
+"Once a contract is signed, it should be filed for record-keeping.","Response(SignContract, FileContract)"
+"If a reservation is made, confirmation should be sent to the customer.","Response(MakeReservation, SendConfirmation)"
+"When a customer places an order, it should be acknowledged with a confirmation email.","Response(PlaceOrder, ReceiveConfirmation)"
+"Before hiring a candidate, interviews must be conducted.","Precedence(ConductInterviews, HireCandidate)"
+"Once a task is assigned, progress should be monitored regularly.","Response(AssignTask, MonitorProgress)"
+"If a recipe requires baking, preheating the oven is essential.","Precedence(PreheatOven, BakeRecipe)"
+"When an email is received, it should be checked for attachments.","Response(ReceiveEmail, CheckAttachments)"
+"If a door is locked, the key must be used to unlock it before entry.","Precedence(LockDoor, UnlockDoor)"
+"Once a garden is planted, it should be watered regularly for proper growth.","Response(PlantGarden, WaterGarden)"
+"When a customer makes a reservation, the booking system must also update availability.","RespondedExistence(MakeReservation, UpdateAvailability)"
+"If a student participates in a study group, they must also contribute to discussions.","RespondedExistence(ParticipateStudyGroup, Cont"
+"If an employee requests time off, they should also attend a training session.","RespondedExistence(RequestTimeOff, AttendTrainingSession"
+Enrolling in a course must be accompanied by accessing course materials.,"RespondedExistence(EnrollInCourse, AccessCourse"
+Renting a movie should be paired with streaming the film.,"RespondedExistence(RentMovie, StreamFilm)"
+Making hotel reservations should coincide with confirming payment details.,"RespondedExistence(MakeReservations, ConfirmPayment"
+"If a gardener plants flowers, they should also water them regularly.","RespondedExistence(PlantFlowers, WaterFlowers)"
+"If a mechanic changes oil, they should also replace the oil filter.","RespondedExistence(ChangeOil, ReplaceOilFilter)"
+Enrolling in a study abroad program must involve attending a pre-departure briefing.,RespondedExistence(EnrollInStudyAbroadProgram
+"Joining a hiking group should coincide with exploring hiking trails, and vice versa.","CoExistence(JoinHikingGroup, ExploreHik"
+"Registering for a writing workshop should pair with practicing writing exercises, and vice versa.","CoExistence(RegisterWritingWorkshop, PracticeWrit"
+"Registering for a language exchange program should coincide with conversing with language partners, and conversing with language partners should coincide with registering for a language exchange program.","CoExistence(RegisterLanguageExchangeProgram, ConverseWithLanguagePart"
+"Enrolling in a yoga class should match with practicing yoga poses, and practicing yoga poses should match with enrolling in a yoga class.","CoExistence(EnrollYogaClass, PracticeYogaPos"
+"To sign up for a sushi-making class, one must prepare sushi rolls, and preparing sushi rolls requires signing up for a sushi-making class.","CoExistence(SignUpSushiMakingClass, Prep"
+"If one is applying for a scuba diving course, they should dive in underwater caves, and diving in underwater caves necessitates applying for a scuba diving course.","CoExistence(ApplyScubaDivingCourse, Dive"
+"To sign up for a cooking workshop, one must prepare gourmet meals, and preparing gourmet meals requires signing up for a cooking workshop.","CoExistence(SignUpCookingWorkshop, PrepareG"
+"To become a certified scuba diver, one must complete open water dives, and completing open water dives requires becoming a certified scuba diver.","CoExistence(CompleteOpenWaterDives, BecomeCertified"
+"After the user clicks the Submit button, the form data should be processed instantly.","ChainResponse(ClickSubmitButton, ProcessFormData)"
+"Prior to the film screening, the projectionist must load the film reel into the projector immediately before.","ChainPrecedence(LoadReel, ScreenFilm)"
+"Upon the completion of the exam, the answer sheets should be collected without any delay.","ChainResponse(CompleteExam, CollectAnswerSheets)"
+"Before the conference begins, the attendees should register online immediately before.","ChainPrecedence(RegisterOnline, StartConference)"
+"Following the completion of the registration process, users should receive a welcome message without delay.","ChainResponse(CompleteRegistration, ReceiveWelcomeMessage)"
+"Once the booking is confirmed, a confirmation email should be dispatched promptly.","ChainResponse(ConfirmBooking, DispatchConfirmationEmail"
+Receiving a confirmation message is necessary without delay after submitting the application form.,"ChainResponse(SubmitApplicationForm, ReceiveConfirmationMessage)"
+Updating the order status should take place right after processing the payment.,"ChainResponse(ProcessPayment, UpdateOrderStatus)"
+The design approval process should directly precede the commencement of manufacturing.,"ChainPrecedence(DesignApproval, StartManufact"
+The end of the exercise routine involves stretching.,End(Stretch)
+The wrap-up of the conference involves distributing feedback forms.,End(DistributeFeedbackForms)
+Closing the account must occur at the end.,End(CloseAccount)
+"As the first step in the process, logging into the system is required.",Init(LogIn)
+The renovation process starts with inspecting the property.,Init(InspectProperty)
+The training session ends with providing certificates to participants.,End(ProvideCertificates)
+The journey to success begins with setting ambitious goals.,Init(SetAmbitiousGoals)
+Processing incoming orders must occur at least once every business day.,AtLeastOne(ProcessIncomingOrders)
+Conducting routine maintenance checks should be performed at least once every week to ensure optimal equipment performance.,AtLeastOne(ConductMaintenanceChecks)
+Updating antivirus definitions must occur at least once a week to stay protected against emerging threats.,AtLeastOne(UpdateAntivirusDefinitions)
+The annual performance appraisal meeting with the supervisor is mandatory for all employees at least once a year.,AtLeastOne(HoldPerformanceAppraisalMeeting)
+Students must submit their research proposal to the department committee at least once.,AtLeastOne(SubmitResearchProposal)
+Submitting a late assignment is penalized and should only happen at most once during the semester.,AtMostOne(SubmitLateAssignment)
+Utilizing the emergency backup system is restricted and should only happen at most once per fiscal year.,AtMostOne(UtilizeBackupSystem)
+"Submitting additional expense reports for reimbursement is allowed, but it should not happen more than once a month.",AtMostOne(SubmitExpenseReports)
+"Adjusting your work schedule is acceptable, but it should not occur more than once per calendar month.",AtMostOne(AdjustWorkSchedule)
+"In their quest for knowledge, the researchers must conduct at least one experiment per week to test their hypotheses.",AtLeastOne(ConductExperiment)
+Testing should be carried out at least once.,AtLeastOne(Testing)
+A payment reversal should occur not more than once.,AtMostOne(ReversePayment)
+A deletion operation can happen at most once.,AtMostOne(DeleteOperation)
+"If cooking dinner, ordering takeout should not happen, and vice versa.","NotCoExistence(CookDinner, OrderTakeout)"
+"If exercising at the gym, sitting idle should not happen, and vice versa.","NotCoExistence(ExerciseGym, SitIdle"
+Conducting maintenance on the server should not coexist with running software updates.,"NotCoExistence(ConductMaintenance, RunSoftwareUp"
+"Choosing Module A for study should preclude selecting Module B, and vice versa.","NotCoExistence(ChooseModuleAA, ChooseModuleBB)"
+The completion of Module A exam and Module B exam should not coexist within the semester.,"NotCoExistence(CompleteModuleAExam, CompleteModuleBEx"
+The installation of Application X and Application Y should not occur together within the device.,"NotCoExistence(InstallApplicationX, InstallApplicationY)"

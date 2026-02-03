@@ -1,0 +1,86 @@
+Text Description,Declare Constraint
+"Only after a claim is created, it is possible to approve the claim.","Precedence(CreateClaim, ApproveClaim)"
+"To approve a claim, it should be created first.","Precedence(CreateClaim, ApproveClaim)"
+"Creation of the claim is required, before it can be approved.","Precedence(CreateClaim, ApproveClaim)"
+The payment of the ticket is eventually followed by the actual transfer of money.,"Response(PayTicket, TransferMoney)"
+If they decide that the invoice appears legit then they enter all relevant data into the system.,"Response(DecideInvoiceLegit, EnterData)"
+"Once payment is confirmed, the invoice case should be closed.","Response(ConfirmPayment, CloseCase)"
+Sending an invoice must be preceded by creating a claim.,"Precedence(CreateClaim, SendInvoice)"
+Creating a claim must follow sending an invoice.,"Response(SendInvoice, CreateClaim)"
+MsHandoffRequest message precedes BsHandoffAccept.,"Precedence(MsHandoffRequest, BsHandoffAccept)"
+"When users give a source data file name, then users can load  the source data into the system.","Precedence(GiveDataFileName, LoadSourceData)"
+The load button is disabled until information window is closed.,"Precedence(CloseInformationWindow, LoadButton)"
+"When a file is uploaded, it may be processed.","Precedence(UploadFile, ProcessFile)"
+"Once a reservation is confirmed, a confirmation email should be sent.","Response(ConfirmReservation, SendConfirmationEmail)"
+An experiment must be conducted before results can be analyzed.,"Precedence(ConductExperiment, AnalyzeResults)"
+"Once a song is recorded, it should be mixed and mastered.","Response(RecordSong, MixAndMaster)"
+An appointment must be scheduled before it can take place.,"Precedence(ScheduleAppointment, ConductAppointment)"
+"Upon a patient's arrival, their vitals must undergo checking.","Response(PatientArrival, CheckVitals)"
+Completion of the test is required before grading can begin.,"Precedence(CompleteTest, BeginGrading)"
+"Prior to serving a meal, the table must be set.","Precedence(SetTable, ServeMeal)"
+"If a customer requests a refund, the finance department should process the refund.","Response(RequestRefund, ProcessRefund)"
+"When a software update is released, it should be downloaded before installation.","Precedence(DownloadUpdate, InstallUpdate)"
+"Before submitting an assignment, it should be reviewed for errors.","Precedence(ReviewAssignment, SubmitAssignment)"
+"After a product is manufactured, it should undergo quality control checks.","Response(ManufactureProduct, PerformQualityChecks)"
+"When a customer enters a store, they should be greeted by a salesperson.","Response(EnterStore, GreetCustomer)"
+"Before a presentation, the slides need to be rehearsed for smooth delivery.","Precedence(RehearseSlides, DeliverPresentation)"
+"After setting up a tent, camping equipment should be organized inside.","Response(SetUpTent, OrganizeEquipment)"
+"If a student participates in a forum discussion, they should share resources as well.","RespondedExistence(ForumParticipation, ShareResources)"
+"If a student participates in a webinar, they must also engage in live discussions.","RespondedExistence(ParticipateInWebinar, EngageInLiveDiscussions)"
+Completing an online order should involve applying promotional codes.,"RespondedExistence(CompleteOnlineOrder, ApplyPromoCodes)"
+"When purchasing a ticket, travelers should also make hotel reservations.","RespondedExistence(PurchaseTicket, MakeHotelReservations)"
+"When a musician rehearses a piece, they should also practice sight-reading.","RespondedExistence(RehearsePiece, PracticeSightReading)"
+Ordering takeout should be accompanied by specifying delivery instructions.,"RespondedExistence(OrderTakeout, SpecifyDeliveryInstructions)"
+"If a musician tunes an instrument, they should also check for proper intonation.","RespondedExistence(TuneInstrument, CheckIntonation)"
+"If a cyclist rides a bike, they should also wear a helmet for safety.","RespondedExistence(RideBike, WearHelmetForSafety)"
+Subscribing to a training program should be complemented by attending an orientation webinar.,"RespondedExistence(SubscribeToTrainingProgram, AttendOrientationWebinar)"
+Joining a book club should be paired with attending an introductory discussion session.,"RespondedExistence(JoinBookClub, AttendIntroductoryDiscussionSession)"
+Joining a research group must be accompanied by attending an orientation seminar.,"RespondedExistence(JoinResearchGroup, AttendOrientationSeminar)"
+"Participating in a team-building exercise should align with attending a team strategy meeting, and vice versa.","CoExistence(ParticipateTeamBuilding, AttendTeamStrategyMeeting)"
+"Enrolling in a parenting class should coincide with buying educational materials, and vice versa.","CoExistence(EnrollParentingClass, PurchaseEducationalMaterials)"
+"Signing up for a charity run should match with organizing a fundraising campaign, and vice versa.","CoExistence(SignUpCharityRun, OrganizeFundraisingCampaign)"
+"Joining a painting club should involve creating vibrant canvases, and creating vibrant canvases should involve joining a painting club.","CoExistence(JoinPaintingClub, CreateVibrantCanvases)"
+"If one is applying for a language course, they should practice speaking with native speakers, and practicing speaking with native speakers requires applying for a language course.","CoExistence(ApplyLanguageCourse, PracticeSpeakingWithNativeSpeakers)"
+"Registering for a painting workshop should pair with selecting painting supplies, and selecting painting supplies should pair with registering for a painting workshop.","CoExistence(RegisterPaintingWorkshop, SelectPaintingSupplies)"
+"Enrolling in a cooking class should correlate with experimenting with new recipes, and experimenting with new recipes should correlate with enrolling in a cooking class.","CoExistence(EnrollCookingClass, ExperimentWithNewRecipes)"
+"Enrolling in a coding bootcamp should correspond to completing coding projects, and completing coding projects should correspond to enrolling in a coding bootcamp.","CoExistence(EnrollCodingBootcamp, CompleteCodingProjects)"
+"Before the music concert begins, the soundcheck must be completed right before.","ChainPrecedence(CompleteSoundcheck, StartConcert)"
+"Prior to the play's opening night, the dress rehearsal must be conducted immediately before.","ChainPrecedence(ConductDressRehearsal, OpeningNight)"
+"Before the museum tour starts, the visitors should gather at the entrance right before.","ChainPrecedence(GatherAtEntrance, StartMuseumTour)"
+Dispatching the delivery should occur right after placing the order.,"ChainResponse(PlaceOrder, DispatchDelivery)"
+Receiving a booking confirmation should occur without delay after making a reservation.,"ChainResponse(MakeReservation, ReceiveBookingConfirmation)"
+The completion of the user interface design should directly precede the development of the backend.,"ChainPrecedence(DesignUserInterface, DevelopBackend)"
+The completion of the curriculum design must directly precede the scheduling of classes.,"ChainPrecedence(DesignCurriculum, ScheduleClasses)"
+The start of the exercise routine involves warming up.,Init(WarmUp)
+The outset of the day starts with morning meditation.,Init(Meditation)
+Reading the instructions comes before anything else.,Init(ReadInstructions)
+Revising the manuscript should happen last.,End(ReviseManuscript)
+Completing the questionnaire marks the end of the survey.,End(CompleteQuestionnaire)
+"As the initial task, putting on safety gear is required.",Init(PutOnSafetyGear)
+"As the last step in the process, shutting down the system is required.",End(ShutDownSystem)
+"In order to commence the experiment, setting up equipment is required.",Init(SetUpEquipment)
+The process wraps up with a comprehensive project review session.,End(ProjectReviewSession)
+Deleting sensitive data from the database should only be done if absolutely necessary and may occur at most once.,AtMostOne(DeleteSensitiveData)
+Initiating a factory reset on the device should only be considered as a final troubleshooting step and may occur at most once.,AtMostOne(InitiateFactoryReset)
+Hosting training sessions for new employees should take place at least once per quarter to onboard new staff effectively.,AtLeastOne(HostTrainingSessions)
+Enrolling in the special topics seminar is limited to at most once per academic term due to space constraints.,AtMostOne(EnrollSpecialSeminar)
+Requesting a deferral on the exam schedule is discouraged and should only be done at most once per academic year.,AtMostOne(RequestDeferral)
+"Declaring a minor is an optional choice, but it can only occur at most once during the undergraduate program.",AtMostOne(DeclareMinor)
+Participating in one extracurricular activity is mandatory.,AtLeastOne(ParticipateExtracurricular)
+All employees are expected to undergo diversity training at least once.,AtLeastOne(UndergoDiversityTraining)
+"Changing your major is allowed, but it can only occur at most once throughout your academic journey.",AtMostOne(ChangeMajor)
+"Across his career, Tom must participate in at least one charity event annually to give back to the community.",AtLeastOne(ParticipateCharityEvent)
+An emergency evacuation can happen at most once.,AtMostOne(EvacuateEmergency)
+A repair request should be submitted not more than once.,AtMostOne(SubmitRepairRequest)
+Meetings with clients and internal training sessions should not coexist.,"NotCoExistence(MeetingsWithClients, InternalTrainingSessions)"
+Research data gathering and research data analysis should never occur together.,"NotCoExistence(DataGathering, DataAnalysis)"
+Vehicle repair and vehicle sale should not occur together in automotive repair shops.,"NotCoExistence(VehicleRepair, VehicleSale)"
+Reading a book and watching TV should never occur together.,"NotCoExistence(ReadBook, WatchTV)"
+Painting a picture and playing a musical instrument should never occur together.,"NotCoExistence(PaintPicture, PlayMusicalInstrument)"
+Doing yoga and lifting heavy weights should never occur together.,"NotCoExistence(DoYoga, LiftWeights)"
+Cooking breakfast and going for a morning run should no+B841+A814:B841+A814:B840,"NotCoExistence(CookBreakfast, MorningRun)"
+Hosting a webinar should not occur together with attending a conference.,"NotCoExistence(HostWebinar, AttendConference)"
+"If passing the exam for Module A occurs, failing the exam for Module B may not occur before or after passing the exam for Module A, and vice versa.","NotCoExistence(PassModuleAExam, FailModuleBExam)"
+The enrollment in Module A and Module B should not coexist within the academic program.,"NotCoExistence(EnrollModuleA, EnrollModuleB)"
+The selection of Topic X and Topic Y should not coexist within the research study.,"NotCoExistence(SelectTopicX, SelectTopicY)"
+Submitting the literature review and enrolling in the research seminar should not happen together within the academic term.,"NotCoExistence(SubmitLiteratureReview, EnrollResearchSeminar)"

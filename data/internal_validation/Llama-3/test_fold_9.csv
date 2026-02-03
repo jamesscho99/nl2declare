@@ -1,0 +1,86 @@
+Text Description,Declare Constraint
+"They have to create the claim, before they can approve it.","Precedence(CreateClaim, ApproveClaim)"
+"If approval of the claim occurs, then creation of the claim must have been carried out first.","Precedence(CreateClaim, ApproveClaim)"
+Personal information of passengers can be provided after the booking of the ticket,"Precedence(BookTicket, ProvidePersonalInformation)"
+When all necessary approvals have been received the invoice can be paid.,"Precedence(ReceiveApprovals, PayInvoice)"
+"Finally, we have to pay the invoice before we can confirm payment.","Precedence(PayInvoice, ConfirmPayment)"
+A claim must be created before an invoice is sent.,"Precedence(CreateClaim, SendInvoice)"
+The creation of a claim is required to send an invoice.,"Precedence(CreateClaim, SendInvoice)"
+Creating a claim requires sending an invoice.,"Precedence(SendInvoice, CreateClaim)"
+If the title is in the List then the book is found.,"Response(TitleInList, BookFounnd)"
+"If a new name is entered in the Loan List, then the password is always correct.","Response(EnterNewName, PasswordCorrect)"
+"When a document is signed, it should be archived.","Response(SignDocument, ArchiveDocument)"
+"When a product is ordered, it should be added to the inventory.","Response(OrderProduct, AddToInventory)"
+"When a patient arrives, their vitals should be checked.","Response(PatientArrival, CheckVitals)"
+"Upon completion of a purchase, an invoice generation is requisite.","Response(MakePurchase, GenerateInvoice)"
+"Following request submission, review by the appropriate department is required.","Response(SubmitRequest, ReviewRequest)"
+"Upon the arrival of a patient at the medical facility, one of the fundamental steps that need to be undertaken is the comprehensive and thorough checking of their vital signs and health metrics to ensure their well-being and ascertain any potential health concerns or issues that may require immediate attention or intervention.","Response(PatientArrival, CheckVitals)"
+"Once the alarm is triggered, emergency services should be dispatched.","Response(TriggerAlarm, DispatchEmergencyServices)"
+"When a bug report is filed, the development team must acknowledge it.","Response(FileBugReport, AcknowledgeBugReport)"
+Completing the manuscript is a prerequisite for submitting a book to publishers.,"Precedence(CompleteManuscript, SubmitBook)"
+"When a customer cancels a subscription, they should receive a confirmation email.","Response(CancelSubscription, ReceiveConfirmationEmail)"
+"If a presentation is created, it should be rehearsed before delivery.","Precedence(RehearsePresentation, DeliverPresentation)"
+"Before conducting a survey, questions must be formulated.","Precedence(FormulateQuestions, ConductSurvey)"
+"After an event is organized, it should be evaluated for improvements.","Response(OrganizeEvent, EvaluateEvent)"
+"Before making a purchase, the budget must be reviewed.","Precedence(ReviewBudget, MakePurchase)"
+"After a meal is cooked, it should be served hot.","Response(CookMeal, ServeHot)"
+"After an order is placed, it should be tracked for delivery.","Response(PlaceOrder, TrackDelivery)"
+"If an employee resigns, their access to company resources should be revoked.","Response(ResignEmployee, RevokeAccess)"
+"After a meeting is held, minutes should be documented for future reference.","Response(HoldMeeting, DocumentMinutes)"
+"Before taking a photograph, the camera settings need to be adjusted.","Precedence(AdjustCameraSettings, TakePhoto)"
+"After receiving a notification, it should be acknowledged for further action.","Response(ReceiveNotification, AcknowledgeNotification)"
+"When an employee requests leave, they ought to attend a training session as well.","RespondedExistence(RequestLeave, AttendTrainingSession)"
+"If an employee requests time off, they should also plan for coverage.","RespondedExistence(RequestTimeOff, PlanForCoverage)"
+"When a programmer writes code, they should also debug for errors.","RespondedExistence(WriteCode, DebugForErrors)"
+"Applying for a painting workshop should align with honing painting techniques, and vice versa.","CoExistence(ApplyPaintingWorkshop, HonePaintingTechniques)"
+"Enrolling in a gardening class should coincide with planting garden seeds, and vice versa.","CoExistence(EnrollGardeningClass, PlantGardenSeeds)"
+"Applying for a painting workshop should align with honing painting techniques, and honing painting techniques should align with applying for a painting workshop.","CoExistence(ApplyPaintingWorkshop, HonePaintingTechniques)"
+"Signing up for a mindfulness course should be linked to practicing meditation techniques, and practicing meditation techniques should be linked to signing up for a mindfulness course.","CoExistence(SignUpMindfulnessCourse, PracticeMeditationTechniques)"
+"Enrolling in a mindfulness course should be accompanied by practicing mindfulness meditation, and practicing mindfulness meditation should be accompanied by enrolling in a mindfulness course.","CoExistence(EnrollMindfulnessCourse, PracticeMindfulnessMeditation)"
+"Participating in a pottery workshop should be accompanied by sculpting clay figures, and sculpting clay figures should coincide with participating in a pottery workshop.","CoExistence(ParticipatePotteryWorkshop, SculptClayFigures)"
+"Enrolling in a gardening club necessitates growing vibrant flowers, and growing vibrant flowers requires enrolling in a gardening club.","CoExistence(EnrollGardeningClub, GrowVibrantFlowers)"
+"Once the application form is completed, the confirmation email must be sent to the applicant right away.","ChainResponse(CompleteApplicationForm, SendConfirmationEmail)"
+The proposal should be reviewed by the committee members right before the final decision is made.,"ChainPrecedence(ReviewProposal, MakeFinalDecision)"
+The car should be fueled up immediately before embarking on a long road trip.,"ChainPrecedence(FuelCar, StartRoadTrip)"
+"After submitting the feedback form, the acknowledgment message must be displayed promptly.","ChainResponse(SubmitFeedbackForm, DisplayAcknowledgmentMessage)"
+"When the chef finishes preparing the ingredients, the cooking process should begin right away.","ChainResponse(PrepareIngredients, StartCooking)"
+"When the author completes the manuscript, the editing process should commence right after.","ChainResponse(ConductMarketResearch, StartProductDevelopment)"
+"If a customer requests a refund, the refund process must be initiated immediately before.","ChainPrecedence(RequestRefund, InitiateRefundProcess)"
+"Before the stage performance begins, the props must be placed onstage immediately before.","ChainPrecedence(PlacePropsOnstage, StartPerformance)"
+"After submitting the application form, receiving a confirmation message is necessary without delay.","ChainResponse(SubmitApplicationForm, ReceiveConfirmationMessage)"
+"When the payment is processed, updating the order status should take place right after.","ChainResponse(ProcessPayment, UpdateOrderStatus)"
+Updating the inventory should happen immediately after customer checkout.,"ChainResponse(CustomerCheckout, UpdateInventory)"
+The finalization of the script should come immediately before casting actors for the film.,"ChainPrecedence(FinalizeScript, CastActors)"
+The commencement of the presentation preparation involves creating slides.,Init(CreateSlides)
+The onset of the meeting involves setting the agenda.,Init(SetAgenda)
+The completion of the presentation involves answering questions.,End(AnswerQuestions)
+Checking the inventory should happen first.,Init(CheckInventory)
+Creating a shopping list must be the starting point.,Init(CreateShoppingList)
+Opening the document is the first task.,Init(OpenDocument)
+"To start the journey, packing the essentials is essential.",Init(PackEssentials)
+The process of buying new hardware is started as soon as a request for new hardware is received by the IT department.,Init(ReceiveRequest)
+"Whenever the sales department receives an order, a new process instance is created.",Init(ReceiveOrder)
+Finalizing the contract marks the end of the negotiation process.,End(FinalizeContract)
+Setting up the tent signals the start of the camping trip.,Init(SetUpTent)
+The day ends with a peaceful walk under the stars.,End(PeacefulWalkUnderStars)
+Executing the failover process should be limited to instances of server failure and may occur at most once.,AtMostOne(ExecuteFailoverProcess)
+An internship is a mandatory part of the curriculum and must be completed at least once during the program.,AtLeastOne(CompleteInternship)
+"Registering for the optional field trip is allowed, but it can only happen at most once during the semester.",AtMostOne(RegisterFieldTrip)
+A minimum of one volunteer experience is required.,AtLeastOne(VolunteerExperience)
+Accessing the confidential database is limited and should occur at most once per employee per day.,AtMostOne(AccessDatabase)
+"As part of his fitness routine, Alex must run at least one marathon every year to challenge himself.",AtLeastOne(RunMarathon)
+"In her free time, Emily has to try at least one new hobby each month to explore her interests.",AtLeastOne(TryNewHobby)
+"Over the weekend, Mark has to explore at least one new hiking trail to experience nature differently.",AtLeastOne(ExploreNewHikingTrail)
+"As part of his personal growth journey, Michael must practice at least one act of kindness daily to spread positivity.",AtLeastOne(PracticeActOfKindness)
+An appointment must be scheduled at least once.,AtLeastOne(ScheduleAppointment)
+A meeting should take place at least once.,AtLeastOne(HoldMeeting)
+Training sessions need to occur at least once.,AtLeastOne(ConductTrainingSessions)
+A withdrawal request may be made at most once.,AtMostOne(MakeWithdrawalRequest)
+Surveys need to be conducted at least once.,AtLeastOne(ConductSurveys)
+Software updates should be installed at least once a week.,AtLeastOne(WeeklySoftwareUpdates)
+The completion of online payment and cancellation of the order are mutually exclusive within the e-commerce process.,"NotCoExistence(CompleteOnlinePayment, CancelOrder)"
+Order processing and order cancellation should be mutually exclusive within e-commerce workflows.,"NotCoExistence(ProcessOrder, CancelOrder)"
+Cooking a meal and ordering takeout should never occur together.,"NotCoExistence(CookMeal, OrderTakeout)"
+Reading a book and scrolling through social media should not happen both.,"NotCoExistence(ReadBook, ScrollSocialMedia)"
+"If attending the lecture for Module A occurs, dropping Module B may not occur before or after attending the lecture for Module A, and vice versa.","NotCoExistence(AttendModuleALecture, DropModuleB)"
+Enrolling in the economics elective and withdrawing from the finance seminar should not happen together within the course schedule.,"NotCoExistence(EnrollEconomicsElective, WithdrawFinanceSeminar)"
